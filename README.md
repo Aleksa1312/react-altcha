@@ -221,7 +221,7 @@ export async function GET() {
 
 ---
 
-### Verify Captcha
+### Verify Api Route
 
 This api route handles the verification of the solution provided by captcha widget.
 
