@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect } from "react"
-import { Configure } from "../types"
+import { type Configure } from "../types"
 
 export function Altcha(props: Configure) {
   // bind altcha script to the document head
