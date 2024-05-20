@@ -1,7 +1,7 @@
 # React Altcha
 
 React Altcha is a type-safe wrapper around [Altcha](https://altcha.org/), a fully open-source, self-hostable captcha solution.
-Altcha is a good alternative to Google's reCaptcha and Cloudflares Turnstile captcha solutions.
+Altcha is a good alternative to Google's reCaptcha and Cloudflare's Turnstile captcha solutions.
 You can learn more about Altcha on their [official docs](https://altcha.org/docs/get-started/).
 
 ## Example
@@ -10,14 +10,13 @@ You can learn more about Altcha on their [official docs](https://altcha.org/docs
 import { Altcha } from "react-altcha"
 
 export default function ProtectedForm() {
-  async function handleSubmit(e: FormEvent) {
+  async function handleSubmit() {
     // This form is captcha protected now.
-
     // ...handle form submition
   }
-  
+
   return (
-    <form onSubmit((e) => await handleSubmit(e)>
+    <form onSubmit={handleSubmit}>
       <Altcha
         challengeurl={"https://example.com/api/captcha/challenge"}
         verifyurl={"https://example.com/api/captcha/verify"}
@@ -30,10 +29,11 @@ export default function ProtectedForm() {
 
 ## Roadmap
 
-These are the functionalites that we are going to be creating in order to make our captcha work.
+These are the functionalities that we are going to be creating in order to make our captcha work.
 You can create a todo list and follow the guide below.
 
 Stuff to do:
+
 1. [Install React Altcha library.](#install-react-altcha)
 2. [Add Altcha widget to a form.](#add-altcha-widget-to-your-form)
 3. [Create project secret.](#create-project-secret)
@@ -81,7 +81,7 @@ export default function ProtectedForm() {
 
   return (
     <form>
-      // ...form fields
+      {/* ...form fields */}
       <Altcha
         challenge={"https://example.com/api/captcha/challenge"}
         verifyurl={"https://example.com/api/captcha/verify"}
@@ -128,7 +128,7 @@ Make sure you are not exposing this secret to the client.
 
 ### Create Crypto Utils
 
-We will be using a couple of utils to make the code simpler and more readable. 
+We will be using a couple of utils to make the code simpler and more readable.
 Some of the utils are already provided by the official `altcha-lib` package.
 
 Install `altcha-lib` package:
@@ -183,6 +183,7 @@ To do this we will create 2 Api routes, one for `creating a challenge` and anoth
 This documentation will create an example of this setup in a next.js project.
 
 Create following routes:
+
 - `/api/captcha/challenge`
 - `/api/captcha/verify`
 
