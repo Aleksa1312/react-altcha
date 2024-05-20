@@ -1,6 +1,6 @@
 {
   "name": "react-altcha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Type safe react wrapper library for Altcha, open source, self-hostable captcha provider.",
   "main": "src/index.ts",
   "scripts": {},
